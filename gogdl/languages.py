@@ -15,7 +15,7 @@ class Language:
         # If comparing to string, look for the code, name and deprecated code
         if type(value) is str:
             return (
-                value == self.code
+                value.lower() == self.code.lower()
                 or value.lower() == self.name.lower()
                 or value.lower() in [l.lower() for l in self.deprecated_codes]
             )

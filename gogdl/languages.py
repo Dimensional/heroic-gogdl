@@ -17,7 +17,7 @@ class Language:
             return (
                 value == self.code
                 or value.lower() == self.name.lower()
-                or value in self.deprecated_codes
+                or value.lower() in [l.lower() for l in self.deprecated_codes]
             )
         return NotImplemented
 
